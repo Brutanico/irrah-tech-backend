@@ -1,0 +1,24 @@
+spring:
+  application:
+    name: irrah-tech-backend
+  datasource:
+    url: ${DB_URL:jdbc:postgresql://localhost:5432/irrah}
+    username: ${DB_USERNAME:postgres}
+    password: ${DB_PASSWORD:postgres}
+  jpa:
+    hibernate:
+      ddl-auto: update
+    open-in-view: false
+    properties:
+      hibernate:
+        format_sql: true
+  cache:
+    type: simple
+
+server:
+  error:
+    include-message: never
+
+queue:
+  worker:
+    fixed-delay-ms: 1000
